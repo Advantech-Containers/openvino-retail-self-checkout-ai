@@ -1,0 +1,26 @@
+
+services:
+  retail-ai:
+    image: harbor.edgesync.cloud/intel/openvino-retail-self-checkout-ai:2026.3.1
+    container_name: advantech_weda_intel-retail-ai
+    hostname: advantech
+    stdin_open: true
+    tty: true
+    restart: "no"
+
+    devices:
+      - /dev/dri:/dev/dri
+      - /dev/accel:/dev/accel
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${HOME}/Downloads:/mnt
+
+    environment:
+      - DISPLAY=${DISPLAY}
+      - NO_AT_BRIDGE=1
+
+    network_mode: host
+
+    command: python3 app.py
+

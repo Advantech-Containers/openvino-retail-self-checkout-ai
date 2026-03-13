@@ -29,6 +29,7 @@ This work is based on the official Intel retail reference implementation:
 
 - Install [Docker Engine](https://docs.docker.com/engine/install/ubuntu/)
 - Perform Linux post-installation steps - [configure Docker as non-root user](https://docs.docker.com/engine/install/linux-postinstall/)
+- Utilizing [Docker Compose](https://docs.docker.com/compose/) to unlocking a streamlined and efficient development and deployment.
 
 ### OpenVINO™ Device Support 
 
@@ -53,19 +54,19 @@ xhost +
 ```
 You shoule be able to see outputs from the console`access control disabled, clients can connect from any host`
 
-### Step 2 — Pull the Docker Image
+### Step 2 — Pull the Image
 
 ```bash
-docker pull sertek/intelxadvantech:retail_ai_2026.2
+docker pull harbor.edgesync.cloud/intel/openvino-retail-self-checkout-ai:2026.3.1
 ```
 
-### Step 3 — Docker Run
+### Step 3 — Run
 
 ```bash
-docker run --device /dev/dri:/dev/dri --volume /tmp/.X11-unix/:/tmp/.X11-unix --env DISPLAY=$DISPLAY --interactive --tty --volume ~/Downloads:/mnt --device /dev/accel:/dev/accel --hostname advantech --rm sertek/intelxadvantech:retail_ai_2026.2 python app.py
+docker compose up
 ```
 
-![demo](./self-checkout_container.gif)
+![demo](./self-checkout_demo.gif)
 
 ---
 
@@ -76,5 +77,5 @@ docker run --device /dev/dri:/dev/dri --volume /tmp/.X11-unix/:/tmp/.X11-unix --
 - **Docker documentation**: Docker docs (installation & post-installation)
 
 - The upstream repository includes additional licensing and disclaimer notes
-(e.g., third-party datasets, and models).
+(e.g., GStreamer licensing, third-party datasets, and models).
 These may apply depending on how the demo is built and distributed.
