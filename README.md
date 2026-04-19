@@ -44,7 +44,7 @@ Depending on your hardware, configure one or more of the following:
 
 ---
 
-## Quick Start
+## Quick Start Guide
 
 ### Step 1 — To Disables Access Control for the X Server
 
@@ -57,7 +57,7 @@ You shoule be able to see outputs from the console`access control disabled, clie
 ### Step 2 — Pull the Image
 
 ```bash
-docker pull harbor.edgesync.cloud/intel/openvino-retail-self-checkout-ai:2026.3.1
+docker pull harbor.edgesync.cloud/intel/openvino-retail-self-checkout-ai:2026.4-yolo26n
 ```
 
 ### Step 3 — Run
